@@ -9,8 +9,6 @@ filter.addEventListener('input', (event) =>{
     })
     render(filteredUser)
 })
-
-
 async function start() {
     list.innerHTML = 'Loading...'
     try {
@@ -32,16 +30,11 @@ function render(users = []) {
     } else {
         const html = users.map(toHTML).join('')
         list.innerHTML = html
-    }
-    
-    
+    }    
 }
-
 function toHTML(user) {
     return `
         <li class="list-group-item"> ${user.name}</li>
     `
 }
-
-
 start();
